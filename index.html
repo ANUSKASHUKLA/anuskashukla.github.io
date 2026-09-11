@@ -3,108 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Anuska Shukla</title>
+    <title>Paws & Care | Anuska Shukla</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
-            padding: 30px;
-            background-color: #f4f6f9;
-            color: #333333;
-        }
-        .resume-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
-        .header {
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-        .header h1 {
-            margin: 0;
-            font-size: 28px;
-            color: #2c3e50;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-        .header p {
-            margin: 5px 0 0 0;
-            color: #666;
-            font-size: 15px;
-        }
-        h2 {
-            font-size: 18px;
-            color: #1a5276;
-            text-transform: uppercase;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 6px;
-            margin-top: 25px;
-            margin-bottom: 12px;
-            letter-spacing: 0.5px;
-        }
-        p {
-            margin: 8px 0;
-            text-align: justify;
-        }
-        ul {
-            margin: 8px 0 15px 20px;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
-        li {
-            margin-bottom: 6px;
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
         }
-        .footer-note {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+
+        /* Top Bar / Header */
+        header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0d9488;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+        }
+
+        .site-logo span {
+            color: #0f172a;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-size: 15px;
             font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #0d9488;
+        }
+
+        /* Banner Section */
+        .hero-banner {
+            background: linear-gradient(135deg, #0d9488, #115e59);
+            color: #ffffff;
+            text-align: center;
+            padding: 60px 20px 70px;
+        }
+
+        .hero-banner h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .hero-banner p {
+            font-size: 17px;
+            color: #ccfbf1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Author Chip */
+        .author-bar {
+            max-width: 1100px;
+            margin: -25px auto 25px;
+            padding: 0 20px;
+        }
+
+        .author-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .author-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .author-card strong {
+            color: #0f172a;
+        }
+
+        /* Main Blog Layout */
+        .layout-container {
+            max-width: 1100px;
+            margin: 0 auto 50px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2.2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Blog Articles */
+        .articles-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .post-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .post-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .post-body {
+            padding: 28px;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background: #e6fffa;
+            color: #0d9488;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 15px;
+            margin-bottom: 12px;
+        }
+
+        .post-body h2 {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .post-meta {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+
+        .post-body p {
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .checklist {
+            background: #f8fafc;
+            border-left: 4px solid #0d9488;
+            padding: 14px 18px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 15px;
+        }
+
+        .checklist ul {
+            margin: 6px 0 0 18px;
+            padding: 0;
+            color: #334155;
+            font-size: 14px;
+        }
+
+        .checklist li {
+            margin-bottom: 5px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .sidebar-widget {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 17px;
+            color: #0f172a;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0d9488;
+        }
+
+        .about-widget p {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            text-decoration: none;
+            color: #475569;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            transition: color 0.2s;
+        }
+
+        .category-list a:hover {
+            color: #0d9488;
+        }
+
+        .quick-tips p {
+            font-size: 13.5px;
+            color: #475569;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .quick-tips p:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        @media (max-width: 850px) {
+            .layout-container {
+                grid-template-columns: 1fr;
+            }
+            .author-card {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-card">
-    <div class="header">
-        <h1>ANUSKA SHUKLA</h1>
-        <p>Location: Lucknow | Professional Fresher</p>
+    <!-- Header Navigation -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="site-logo">Paws & <span>Care</span></a>
+            <ul class="nav-links">
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#tips">Pet Tips</a></li>
+                <li><a href="#author">About Author</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <h1>Every Paws Matter</h1>
+        <p>A student blog focused on animal care, safety guides, and compassionate coexistence.</p>
+    </section>
+
+    <!-- Author Ribbon -->
+    <div class="author-bar" id="author">
+        <div class="author-card">
+            <p><strong>Blogger:</strong> Anuska Shukla</p>
+            <p><strong>Topic:</strong> Community Animal Welfare</p>
+            <p><strong>Location:</strong> Lucknow, India</p>
+        </div>
     </div>
 
-    <h2>Career Objective</h2>
-    <p>
-        To leverage my foundation of dedication and quick learning into a challenging role that offers significant professional growth within a forward-thinking organization. I am eager to apply my academic background and commitment to excel in a demanding environment, contributing effectively to team goals and overall organizational success.
-    </p>
-    <p>
-        My primary objective is to develop a long-term career by taking on increasing responsibilities and continuously enhancing my skill set. I seek to foster a collaborative and innovative work culture, where I can make meaningful contributions. With a strong work ethic and a proactive approach, I am committed to achieving excellence and driving positive outcomes.
-    </p>
+    <!-- Main Layout with Articles and Sidebar -->
+    <main class="layout-container">
 
-    <h2>Professional Experience</h2>
-    <p><strong>FRESHER</strong></p>
-    <p>Ready to apply proactive problem-solving, strong organizational discipline, and dedication in an entry-level position.</p>
+        <!-- Left Articles Area -->
+        <div class="articles-area" id="articles">
 
-    <h2>Non-Technical Skills</h2>
-    <ul>
-        <li>Hard working</li>
-        <li>Quick Learner</li>
-        <li>Adaptability to new environments</li>
-        <li>Strong time management & teamwork</li>
-    </ul>
+            <!-- Post 1 -->
+            <article class="post-card">
+                <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1000&q=80" alt="Caring for animals">
+                <div class="post-body">
+                    <span class="category-tag">Animal Care</span>
+                    <h2>5 Simple Habits to Support Community Animals in Your Locality</h2>
+                    <div class="post-meta">Published by <strong>Anuska Shukla</strong> | Academic Project Submission</div>
+                    
+                    <p>
+                        Street animals in our neighborhoods encounter intense challenges every single day, from harsh summer heat to food scarcity. We do not need expensive resources to help; consistent, practical steps make an immediate difference in their safety.
+                    </p>
 
-    <div class="footer-note">
-        <div>Date: _________________</div>
-        <div>Place: Lucknow</div>
-    </div>
-    <div style="margin-top: 25px;">
-        <strong>ANUSKA SHUKLA</strong>
-    </div>
-</div>
+                    <div class="checklist">
+                        <strong>Practical Daily Steps:</strong>
+                        <ul>
+                            <li><strong>Water Bowls:</strong> Keep an earthen bowl filled with fresh water outside your premises.</li>
+                            <li><strong>Nutritious Meals:</strong> Provide boiled rice, plain rotis, or pet biscuits instead of spicy curries.</li>
+                            <li><strong>Weather Shelter:</strong> Offer a dry spot or clean cardboard under stairs during torrential rains or cold spells.</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Post 2 -->
+            <article class="post-card">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=80" alt="Cat looking calm">
+                <div class="post-body">
+                    <span class="category-tag">Empathy & Wellness</span>
+                    <h2>What Animals Teach Us About Empathy, Patience & Responsibility</h2>
+                    <div class="post-meta">Published by <strong>Anuska Shukla</strong> | Category: Awareness</div>
+
+                    <p>
+                        Interacting with animals teaches us non-verbal communication, compassion, and emotional balance. Research and real-world experience prove that caring for pets or neighborhood strays significantly lowers daily stress.
+                    </p>
+                    <p>
+                        When we treat helpless animals with kindness, we help create a gentler, more compassionate neighborhood for everyone.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Right Sidebar Area -->
+        <aside class="sidebar">
+
+            <div class="sidebar-widget about-widget">
+                <h3>About the Author</h3>
+                <p>
+                    Hi, I'm <strong>Anuska Shukla</strong> from Lucknow. This blog is created as part of my college HTML project to share practical awareness on animal welfare and humane care.
+                </p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Categories</h3>
+                <ul class="category-list">
+                    <li><a href="#"><span>Street Animal Care</span> <span>(03)</span></a></li>
+                    <li><a href="#"><span>Seasonal Protection</span> <span>(02)</span></a></li>
+                    <li><a href="#"><span>Feeding Guidelines</span> <span>(04)</span></a></li>
+                    <li><a href="#"><span>Student Projects</span> <span>(01)</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget quick-tips" id="tips">
+                <h3>Quick Pet Advice</h3>
+                <p><strong>1. Hydration:</strong> Always change street water pots daily to stop mosquitoes from breeding.</p>
+                <p><strong>2. Approach:</strong> Never yell or make sudden moves around an anxious dog.</p>
+                <p><strong>3. Safe Food:</strong> Never give chocolates, onions, or cooked brittle bones to dogs or cats.</p>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Anuska Shukla | Animal Welfare Blog Project</p>
+        <p>Built with Semantic HTML5 & CSS</p>
+    </footer>
 
 </body>
 </html>
