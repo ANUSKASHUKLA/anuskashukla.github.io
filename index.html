@@ -3,482 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuska Shukla | Portfolio</title>
+    <title>Resume - Anuska Shukla</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
         body {
-            background-color: #0f172a;
-            color: #e2e8f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 30px;
+            background-color: #f4f6f9;
+            color: #333333;
         }
-
-        /* Fixed Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            color: #38bdf8;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #38bdf8;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 120px 8% 60px;
-            gap: 40px;
-        }
-
-        .hero-text {
-            flex: 1;
-        }
-
-        .hero-text h3 {
-            font-size: 24px;
-            color: #38bdf8;
-            font-weight: 600;
-        }
-
-        .hero-text h1 {
-            font-size: 48px;
-            font-weight: 800;
-            color: #ffffff;
-            margin: 10px 0;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-text p {
-            font-size: 16px;
-            color: #94a3b8;
-            max-width: 520px;
-            margin-bottom: 25px;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background-color: #38bdf8;
-            color: #0f172a;
-        }
-
-        .btn-primary:hover {
-            background-color: #0ea5e9;
-            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
-        }
-
-        .btn-secondary {
-            border: 2px solid #38bdf8;
-            color: #38bdf8;
-            background: transparent;
-        }
-
-        .btn-secondary:hover {
-            background: #38bdf8;
-            color: #0f172a;
-        }
-
-        /* Animated Glowing Avatar Container */
-        .hero-avatar {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .avatar-glow-ring {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0) 70%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px dashed rgba(56, 189, 248, 0.4);
-            animation: rotateGlow 14s linear infinite;
-        }
-
-        @keyframes rotateGlow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .avatar-inner {
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            background: #1e293b;
-            border: 3px solid #38bdf8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            animation: counterRotate 14s linear infinite;
-        }
-
-        @keyframes counterRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
-        }
-
-        .avatar-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Sections Styling */
-        section {
-            padding: 80px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
-
-        .section-title h2 {
-            font-size: 32px;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .section-title span {
-            color: #38bdf8;
-        }
-
-        /* About Section */
-        .about-content {
-            background: #1e293b;
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .resume-card {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
-
-        .about-content p {
-            font-size: 16px;
-            color: #cbd5e1;
-            line-height: 1.8;
+        .header {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
         }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        .header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #2c3e50;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-
-        .skill-card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
+        .header p {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 15px;
         }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-        .skill-card h4 {
-            color: #38bdf8;
+        h2 {
             font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .skill-card p {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: #1e293b;
-            border-radius: 12px;
-            padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .project-card:hover {
-            transform: translateY(-6px);
-            border-color: #38bdf8;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .project-badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.1);
-            color: #38bdf8;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            align-self: flex-start;
-        }
-
-        .project-card h3 {
-            font-size: 20px;
-            color: #ffffff;
+            color: #1a5276;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 6px;
+            margin-top: 25px;
             margin-bottom: 12px;
+            letter-spacing: 0.5px;
         }
-
-        .project-card p {
-            color: #94a3b8;
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 20px;
+        p {
+            margin: 8px 0;
+            text-align: justify;
         }
-
-        .project-tag {
-            color: #38bdf8;
-            font-size: 13px;
+        ul {
+            margin: 8px 0 15px 20px;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
             font-weight: 500;
-        }
-
-        /* Contact Section */
-        .contact-box {
-            background: #1e293b;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-        }
-
-        .contact-item {
-            margin: 15px 0;
-            font-size: 16px;
-            color: #cbd5e1;
-        }
-
-        .contact-item strong {
-            color: #38bdf8;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            background: #0b1120;
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 100px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hero-text h1 {
-                font-size: 34px;
-            }
-            .btn-group {
-                justify-content: center;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">ANUSKA.</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<div class="resume-card">
+    <div class="header">
+        <h1>ANUSKA SHUKLA</h1>
+        <p>Location: Lucknow | Professional Fresher</p>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-text">
-            <h3>Hello, I'm</h3>
-            <h1>ANUSKA SHUKLA</h1>
-            <p>A dedicated and proactive learner based in Lucknow, focused on teamwork, consistency, and building meaningful digital and administrative work.</p>
-            <div class="btn-group">
-                <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#projects" class="btn btn-secondary">View Work</a>
-            </div>
-        </div>
+    <h2>Career Objective</h2>
+    <p>
+        To leverage my foundation of dedication and quick learning into a challenging role that offers significant professional growth within a forward-thinking organization. I am eager to apply my academic background and commitment to excel in a demanding environment, contributing effectively to team goals and overall organizational success.
+    </p>
+    <p>
+        My primary objective is to develop a long-term career by taking on increasing responsibilities and continuously enhancing my skill set. I seek to foster a collaborative and innovative work culture, where I can make meaningful contributions. With a strong work ethic and a proactive approach, I am committed to achieving excellence and driving positive outcomes.
+    </p>
 
-        <div class="hero-avatar">
-            <div class="avatar-glow-ring">
-                <div class="avatar-inner">
-                    <!-- Clean Animated Tech Illustration -->
-                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=AnuskaShukla&backgroundColor=1e293b" alt="Anuska Avatar">
-                </div>
-            </div>
-        </div>
-    </section>
+    <h2>Professional Experience</h2>
+    <p><strong>FRESHER</strong></p>
+    <p>Ready to apply proactive problem-solving, strong organizational discipline, and dedication in an entry-level position.</p>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-title">
-            <h2>About <span>Me</span></h2>
-        </div>
-        <div class="about-content">
-            <p>
-                I am Anuska Shukla, a dedicated fresher from Lucknow with a passion for quick learning and disciplined work ethic. 
-                I strive to adapt swiftly to new tools and environments, contributing positively to organizational goals while continually improving my skills.
-            </p>
-        </div>
-    </section>
+    <h2>Non-Technical Skills</h2>
+    <ul>
+        <li>Hard working</li>
+        <li>Quick Learner</li>
+        <li>Adaptability to new environments</li>
+        <li>Strong time management & teamwork</li>
+    </ul>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-title">
-            <h2>Core <span>Strengths</span></h2>
-        </div>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h4>Hard Working</h4>
-                <p>Consistent dedication and high effort towards every assigned task and objective.</p>
-            </div>
-            <div class="skill-card">
-                <h4>Quick Learner</h4>
-                <p>Fast grasp of new concepts, workflows, and computer operations.</p>
-            </div>
-            <div class="skill-card">
-                <h4>Teamwork</h4>
-                <p>Active collaboration and positive communication with peers.</p>
-            </div>
-            <div class="skill-card">
-                <h4>Adaptability</h4>
-                <p>Flexible mindset ready to adjust to fast-paced and evolving work requirements.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-title">
-            <h2>My <span>Projects</span></h2>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <div>
-                    <span class="project-badge">Web Project</span>
-                    <h3>Animal Welfare & Care Blog</h3>
-                    <p>Designed and structured an informative online blog focused on stray animal awareness, seasonal care, and practical empathy tips.</p>
-                </div>
-                <div class="project-tag">HTML5 &bull; Responsive Design</div>
-            </div>
-
-            <div class="project-card">
-                <div>
-                    <span class="project-badge">Web Project</span>
-                    <h3>Digital Professional Resume</h3>
-                    <p>Coded a clean, semantic web resume highlighting professional career objectives, core competencies, and background.</p>
-                </div>
-                <div class="project-tag">HTML5 &bull; Modern Layout</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-title">
-            <h2>Contact <span>Me</span></h2>
-        </div>
-        <div class="contact-box">
-            <div class="contact-item">
-                <strong>Name:</strong> Anuska Shukla
-            </div>
-            <div class="contact-item">
-                <strong>Location:</strong> Lucknow, Uttar Pradesh, India
-            </div>
-            <div class="contact-item">
-                <strong>Role:</strong> Fresher (Available for entry-level opportunities)
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Anuska Shukla | Academic Portfolio Submission</p>
-    </footer>
+    <div class="footer-note">
+        <div>Date: _________________</div>
+        <div>Place: Lucknow</div>
+    </div>
+    <div style="margin-top: 25px;">
+        <strong>ANUSKA SHUKLA</strong>
+    </div>
+</div>
 
 </body>
 </html>
